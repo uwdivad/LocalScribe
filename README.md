@@ -1,5 +1,8 @@
 # LocalScribe
 
+[![CI](https://github.com/uwdivad/LocalScribe/actions/workflows/ci.yml/badge.svg)](https://github.com/uwdivad/LocalScribe/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/uwdivad/LocalScribe?sort=semver)](https://github.com/uwdivad/LocalScribe/releases)
+
 Local GPU-accelerated audio/video transcription with timestamped transcripts and optional speaker diarization.
 
 Built on [WhisperX](https://github.com/m-bain/whisperX) + [pyannote.audio](https://github.com/pyannote/pyannote-audio), runs on your local GPU.

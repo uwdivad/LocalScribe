@@ -68,8 +68,6 @@ def load_diarization_model(diarization_model_name: str, device: str, hf_token: s
 
 
 def transcribe_audio(model, audio, batch_size: int, language: str | None) -> dict:
-    import whisperx
-
     print("Transcribing ...")
     t0 = time.time()
     result = model.transcribe(audio, batch_size=batch_size, language=language)

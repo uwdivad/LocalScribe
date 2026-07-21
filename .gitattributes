@@ -1,0 +1,4 @@
+# Keep LF endings on files executed by CI runners (bash heredocs break on CRLF).
+*.yml   text eol=lf
+*.yaml  text eol=lf
+*.sh    text eol=lf

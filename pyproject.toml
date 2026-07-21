@@ -1,0 +1,29 @@
+[project]
+name = "localscribe"
+version = "0.0.1"
+description = "Local GPU-accelerated audio/video transcription with optional two-speaker diarization (WhisperX + pyannote)."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+authors = [{ name = "uwdivad" }]
+keywords = ["whisper", "whisperx", "transcription", "diarization", "pyannote", "mcp"]
+
+# Runtime dependencies are declared in requirements.txt rather than here:
+# PyTorch must be installed from the CUDA wheel index first, and a couple of
+# packages are platform-specific, which pip's standard resolver can't express.
+
+[project.urls]
+Homepage = "https://github.com/uwdivad/LocalScribe"
+Repository = "https://github.com/uwdivad/LocalScribe"
+
+[project.scripts]
+localscribe = "cli:main"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+# E402 (module import not at top) is intentional: cli.py and server.py must call
+# load_dotenv() before importing torch / transcribe so env vars are populated.
+per-file-ignores = { "cli.py" = ["E402"], "server.py" = ["E402"] }
